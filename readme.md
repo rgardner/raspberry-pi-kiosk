@@ -34,12 +34,16 @@ Now we install the tools we need to perfectly show the webpage. The next command
 sudo apt-get install chromium x11-xserver-utils unclutter
 ```
 
-The tools are installed. When the GUI starts up chromium needs to boot in kiosk-mode and open the webpage we filled in. In the next file we can add lines what needs to be executed at startup.
+The tools are installed. When the GUI starts up chromium needs to boot in kiosk-mode and open the webpage we filled in. In the next file we can add lines what needs to be executed at startup. This file depends on the Debian version:
 
 ```
+# Debian Jessie
+sudo nano ~/.config/lxsession/LXDE-pi/autostart
+# Debian Wheezy
 sudo nano /etc/xdg/lxsession/LXDE-pi/autostart
+# Older versions
+sudo nano /etc/xdg/lxsession/LXDE/autostart
 ```
-(this has changed in Debian Wheezy. In the old versions it was /etc/xdg/lxsession/LXDE/autostart)
 
 The autostart files needs to look like this
 
